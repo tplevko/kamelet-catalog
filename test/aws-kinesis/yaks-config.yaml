@@ -16,8 +16,8 @@
 # ---------------------------------------------------------------------------
 
 config:
-  namespace:
-    temporary: true
+  # namespace:
+  #   temporary: true
   runtime:
     resources:
       - aws-kinesis-to-log-uri-based.groovy
@@ -39,8 +39,8 @@ config:
           version: "@camel.version@"
 pre:
   - name: Install kamel
-    run: |
-      kamel install -w -n ${YAKS_NAMESPACE}
+    # run: |
+    #   kamel install -w -n ${YAKS_NAMESPACE}
   - script: prepare-secret.sh
 post:
   - script: delete-secret.sh
